@@ -1,4 +1,4 @@
-(defproject org.clojars.lucywang000/shadow-test-utils "0.0.1"
+(defproject org.clojars.lucywang000/shadow-test-utils "0.0.2"
   :description "Shadow-cljs test helpers, including a kaocha-like test filter"
   :url "https://github.com/lucywang000/shadow-test-utils"
   :license {:name "Eclipse Public License"
@@ -9,7 +9,13 @@
             "test"   ["version"]}
 
   :dependencies [[org.clojure/clojure "1.10.3" :scope "provided"]
-                 [com.rpl/specter "1.1.3"]]
+                 [com.rpl/specter "1.1.3"]
+
+                 ;; deps for pretty diff
+                 [applied-science/js-interop "0.3.1"]
+                 [lambdaisland/deep-diff2 "2.0.108"]
+                 [meander/epsilon "0.0.650"]
+                 [pjstadig/humane-test-output "0.11.0"]]
 
   :deploy-repositories [["clojars" {:url           "https://clojars.org/repo"
                                     :username      :env/clojars_user

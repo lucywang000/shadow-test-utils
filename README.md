@@ -5,13 +5,13 @@ Some helpers for running shadow-cljs tests.
 First, add this to your shadow-cljs.edn:
 
 ```
-[org.clojars.lucywang000/shadow-test-utils "0.0.1"]
+[org.clojars.lucywang000/shadow-test-utils "0.0.2"]
 ```
 
 For deps.edn:
 
 ```clojure
-org.clojars.lucywang000/shadow-test-utils {:mvn/version "0.0.1"}
+org.clojars.lucywang000/shadow-test-utils {:mvn/version "0.0.2"}
 ```
 
 Restart your shadow-cljs process, and you shall have the tests filtering working. 
@@ -21,7 +21,7 @@ For the custom browser test reporter to work, modify the `preloads` of your `:br
 ```clojure
 :builds {
   :test {:target   :browser-test
-         :devtools {:preloads [shadow-test-utils.test-report]}}
+         :devtools {:preloads [shadow-test-utils.pretty-diff]}}
 }
 ```
 
