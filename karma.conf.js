@@ -1,6 +1,6 @@
 module.exports = function (config) {
     config.set({
-      browsers: ['Chrome'],
+      browsers: ['ChromeHeadless'],
       // The directory where the output file lives
       basePath: 'test-assets/karma/',
       // The file itself
