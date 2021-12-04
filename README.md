@@ -3,7 +3,7 @@ Some helpers for running shadow-cljs tests.
 
 [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.lucywang000/shadow-test-utils.svg)](https://clojars.org/org.clojars.lucywang000/shadow-test-utils)
 
-![build](https://github.com/lucywang000/shadow-test-utils/actions/workflows/publish.yml/badge.svg?branch=master)
+![build](https://github.com/lucywang000/shadow-test-utils/actions/workflows/build.yml/badge.svg?branch=master)
 
 ## Usage
 
