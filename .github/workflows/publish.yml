@@ -1,0 +1,53 @@
+name: publish
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    # ubuntu 18.04 comes with lein + java8 installed
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Run Tests
+        run:
+          lein kaocha
+
+  cljs-test:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.16.1
+
+      - name: Run CLJS Tests
+        run: |
+          pnpm install --shamefully-hoist
+          pnpm ci-build
+          pnpm ci-test
+
+  clojars:
+    if: contains(github.ref, 'refs/tags')
+    runs-on: ubuntu-18.04
+    needs: [test, cljs-test]
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Deploy to clojars
+        env:
+          CLOJARS_USER: ${{ secrets.CLOJARS_USER }}
+          CLOJARS_TOKEN: ${{ secrets.CLOJARS_TOKEN }}
+        run:
+          lein deploy clojars

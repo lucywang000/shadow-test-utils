@@ -1,0 +1,17 @@
+{
+  "name": "shadow-test-utils",
+  "version": "0.0.1",
+  "scripts": {
+    "ii": "pnpm install --shamefully-hoist",
+    "ci-build": "shadow-cljs release :ci",
+    "ci-test": "karma start --single-run"
+  },
+  "devDependencies": {
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-cljs-test": "^0.1.0",
+    "shadow-cljs": "^2.16.6",
+    "source-map-support": "^0.5.19",
+    "ws": "^7.1.2"
+  }
+}

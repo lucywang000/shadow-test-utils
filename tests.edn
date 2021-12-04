@@ -1,0 +1,11 @@
+#kaocha/v1
+{:capture-output? true,
+ :color?          true,
+ :fail-fast?      true,
+ :plugins         [:kaocha.plugin/print-invocations],
+ :reporter        kaocha.report/documentation,
+ :tests           [{:id           :unit,
+                    :ns-patterns  ["shadow-test-utils.*-test$"],
+                    :source-paths ["src"],
+                    :test-paths   ["test"]}],
+ :watch?          false}
