@@ -14,12 +14,16 @@ For deps.edn:
 org.clojars.lucywang000/shadow-test-utils {:mvn/version "0.0.2"}
 ```
 
-Restart your shadow-cljs process, and you shall have the tests filtering working. 
+__Make sure this is placed before `thheller/shadow-cljs`.__
+
+Restart your shadow-cljs process, and you shall have the tests filtering working.
 
 For the custom browser test reporter to work, modify the `preloads` of your `:browser-test` target:
 
 ```clojure
 :builds {
+  ...
+
   :test {:target   :browser-test
          :devtools {:preloads [shadow-test-utils.pretty-diff]}}
 }
