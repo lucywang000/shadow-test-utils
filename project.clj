@@ -27,6 +27,6 @@
 
                    :source-paths ["dev/src" "local/src"]
                    :dependencies [[hashp "0.2.1"]
-                                  [org.clojure/clojurescript "1.10.896"]
-                                  [philoskim/debux "0.8.1"]
-                                  [lambdaisland/kaocha "1.60.945"]]}})
+                                  [org.clojure/clojurescript "1.11.4"]
+                                  [philoskim/debux "0.8.2"]
+                                  [lambdaisland/kaocha "1.62.993"]]}})
