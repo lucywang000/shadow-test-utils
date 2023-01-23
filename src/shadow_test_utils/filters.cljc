@@ -66,7 +66,9 @@
 (defn tweak-test-ns
   [namespaces]
   (cond-> namespaces
-    (exists-any-focus-ns? namespaces)
+    (and #?(:cljs ^boolean goog.DEBUG
+            :clj true)
+         (exists-any-focus-ns? namespaces))
     (keep-focus-ns)
 
     true
@@ -78,7 +80,9 @@
 (defn tweak-test-case
   [namespaces]
   (cond-> namespaces
-    (exists-any-focus-case? namespaces)
+    (and #?(:cljs ^boolean goog.DEBUG
+            :clj true)
+         (exists-any-focus-case? namespaces))
     (keep-focus-case)
 
     true
